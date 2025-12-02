@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ismail — Portfolio</title>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="header">
+    <div class="logo">Ismail<span>G</span></div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <div class="hero-text">
+        <h1>Hi, I'm <span class="blue">Ismail Y Gheewala</span></h1>
+        <h2><span class="typing"></span></h2>
+        <p>I build efficient, modern and user-friendly web applications using real-world technologies.</p>
+        <a href="#contact" class="btn">Contact Me</a>
+    </div>
+    <div class="hero-img">
+        <img src="profile.png" alt="profile">
+    </div>
+</section>
+
+<section id="about" class="about section">
+    <h2 class="section-title">About Me</h2>
+    <p>
+        I am a software developer who enjoys creating efficient and user-friendly web applications using modern
+        technologies. I enjoy solving problems, writing clean code and constantly improving my skills through new
+        projects and real-world development.
+    </p>
+</section>
+
+<section id="skills" class="skills section">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-container">
+        <div class="skill"><span>HTML</span><div class="bar" style="--w:95%"></div></div>
+        <div class="skill"><span>CSS</span><div class="bar" style="--w:90%"></div></div>
+        <div class="skill"><span>JavaScript</span><div class="bar" style="--w:85%"></div></div>
+        <div class="skill"><span>Python</span><div class="bar" style="--w:82%"></div></div>
+        <div class="skill"><span>React</span><div class="bar" style="--w:80%"></div></div>
+        <div class="skill"><span>PHP / MySQL</span><div class="bar" style="--w:88%"></div></div>
+    </div>
+</section>
+
+<section id="projects" class="projects section">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>Personal website showcasing skills and projects using responsive UI and animations.</p>
+    </div>
+
+    <div class="project-card">
+        <h3>Number Guessing Game — Python</h3>
+        <p>Console-based logic game demonstrating loops, logic building & random module.</p>
+    </div>
+
+    <div class="project-card">
+        <h3>CSS Learning App — React</h3>
+        <p>Interactive CSS learning platform with examples, code previews & quizzes.</p>
+    </div>
+
+    <div class="project-card">
+        <h3>Skyline Real Estate — PHP & MySQL</h3>
+        <p>Property listing system with authentication and CRUD operations using MySQL DB.</p>
+    </div>
+</section>
+
+<section id="contact" class="contact section">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-links">
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+        <a href="https://instagram.com/ismail._.gheewala" target="_blank">Instagram</a>
+        <a href="https://wa.me/91XXXXXXXXXX" target="_blank">WhatsApp</a>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Ismail Gheewala • All Rights Reserved</p>
+</footer>
+
+
+</body>
+</html>
+<script>
+    
+    // Typing effect
+    new Typed(".typing", {
+        strings: ["Coding Instructor", "Software Developer", "Programmer", "Tech Enthusiast"],
+        typeSpeed: 70,
+        backSpeed: 40,
+        loop: true
+    });
+
+    // Scroll Reveal
+    ScrollReveal().reveal(".hero-text", { duration: 900, origin: "left", distance: "50px" });
+    ScrollReveal().reveal(".hero-img", { duration: 900, origin: "right", distance: "50px" });
+    ScrollReveal().reveal(".about, .skills, .projects, .contact", { duration: 900, distance: "40px", interval: 200 });
+    ScrollReveal().reveal(".project-card", { duration: 900, origin: "bottom", distance: "60px", interval: 100 });
+
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+        const header = document.getElementById('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Smooth scroll for navigation
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+</script>
